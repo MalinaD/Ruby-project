@@ -1,11 +1,11 @@
-    Shoes.app(width: 300, height: 400) do
-      fill rgb(0, 0.6, 0.9, 0.1)
-      stroke rgb(0, 0.6, 0.9)
-      strokewidth 0.25
+ Shoes.app do
+   stack do
+     @back  = background blue
+     @text  = banner "Our appetizing Menu"
+     @press = button "Show our daily proposals"
 
-      100.times do
-        oval(left:   (-5..self.width).rand,
-             top:    (-5..self.height).rand,
-             radius: (25..50).rand)
-      end
-    end
+     @text.style size: 22, stroke: red, margin: 10, align: "center"
+     @press.style width: 200, height: 50, align: "center"
+     @back.style height: 10
+   end
+ end
